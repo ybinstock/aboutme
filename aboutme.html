@@ -1,14 +1,26 @@
-<a href = "CSS Stylesheet" rel = "stylesheet">
+
 	<head>
-		<script></script>
+
+<link rel = "stylesheet" href = "stylesheet.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	</head>
 <body>
+	
+<figure>
+<img src="http://indianaprolis.files.wordpress.com/2011/06/thailand2.jpg" class = "img2">
+
+ <figcaption class = "img2"> Let's go on a boat </figcaption>
+</figure>
 
 <h1>Yoni's About Page</h1>
 
-<img src= "" >
-<img src="">
-<img 
+<img src="https://media.licdn.com/mpr/mpr/shrink_240_240/p/1/000/291/0d6/3d7a800.jpg" class = "img1" >
+
+<figure>
+
+
+
 <h2> Bio </h2>
 <p>
 l attended Rollins College and majored in Political Science and minored in International Business. Post-graduation, I spent a summer volunteering in a rural India building a school and teaching English where I met my current wife. I attended Boston University graduate school and received a MA in Energy and Environmental Analysis. 
@@ -23,13 +35,57 @@ I then joined Ashoka in Washington D.C. where I managed their online fundraising
 I came to the Bay area to work at Mosaic in PR where I had the opportunity to organize a Google Hangout with Billy Parish and Bill McKibben sponsored by Google Plus. I then worked at SolarCity in sales and and as a business development associate at Change.org. Most recently, I'm working on Goodnight Chrome - an extension that helps people disconnect. 
 </p>
 <br>
-I’m passionate about technology, climate change, and entrepreneurship. 
+I am passionate about technology, climate change, and entrepreneurship. 
 </p>
 <h3> Contact me </h3>
 <p1> Yoni Binstock 
+	<br>
 email: ybinstock@gmail.com
+<br>
 phone: 216-548-4658 </p1>
 <h4> Sign up for my newsletter </h4>
 <input type="email" placeholder="Your email">
 <input type="submit">
+<figure>
+<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSLC2fq1QykH-4evGrcQrBxUFPXafAXSiqHVybMWRc11e82WtK7" class = "img3">
+<figcaption class = "img3"> A perfect day </figcaption>
+</figure>
+<div class="slideshow"></div>
+	<button>Next</button>
+	<script>
+		// slides hold an array of image tags //
+		// image tags will be retrieved when user clicks the button //
+		var slides= [
+			'<img src="http://application.denofgeek.com/images/m/75spaceships/main/xwing.jpg">',
+			'<img src="http://img2-1.timeinc.net/ew/i/2012/06/12/tie-fighter_610.jpg">',
+			'<img src="http://application.denofgeek.com/images/m/75spaceships/main/aethersprite.jpg">'
+			];
+
+		// SlideIndex keeps track of current slide we're on //
+		// The SlideIndex must start at 0 and is the starting point for the slide show //
+		var SlideIndex = 0;
+
+		
+		// This function is activated when the user clicks the button //
+		// The function updates the HTML with the next slide //
+			// .length tells me how many entries are in an array //
+			// In this case, there are 3 entries in the array //
+			// As the numerical value of the Slide Index continues to increase, we it divide by 3 //
+			// And use the remainder to select from corresponding slide number in array //
+		var nextSlide = function() {
+			var ImageTag = slides[SlideIndex % slides.length];
+			$('.slideshow').html( ImageTag );
+			// SlideIndex is a stored value, and we will increment it by 1 everytime user clicks //
+			// We will use new value next time we click //
+			SlideIndex = SlideIndex + 1;
+		}
+
+		// run nextPrompt function when button is clicked //
+		$('button').click(function() {
+			nextSlide();
+		});
+
+		nextSlide();
+		</script>
+		
 </body>
